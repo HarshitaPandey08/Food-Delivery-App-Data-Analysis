@@ -63,8 +63,7 @@ Only these columns are allowed in the dataset:
 
 ![image](https://user-images.githubusercontent.com/53274845/236849858-e518f87b-9732-4db0-962c-248cb8ede6f5.png)
 
-![image](https://user-images.githubusercontent.com/53274845/236850233-1b664cb2-0b15-4c30-87c4-b92f2b7682ca.png)
-
+![image](https://user-images.githubusercontent.com/53274845/236852431-2d0ac8da-301a-47ee-b537-93df1a5e41e1.png)
 
  **Task 3** : Dealing with null values in dataset
  
@@ -86,8 +85,7 @@ Only these columns are allowed in the dataset:
 
 ![image](https://user-images.githubusercontent.com/53274845/236850887-0688ef7c-b42e-421a-a8a9-83472ca4fb80.png)
 
- ![image](https://user-images.githubusercontent.com/53274845/236851384-3781391a-fd43-40d2-9a38-7c38d4d2c730.png)
-
+![image](https://user-images.githubusercontent.com/53274845/236852691-bf00a323-fd8a-4a5c-a264-e297a5f94676.png)
 
 **Task 4** : Identifying duplicate data in the dataset
 
@@ -102,6 +100,31 @@ Only these columns are allowed in the dataset:
 
  we have irrelevant reviews like string eg(RATED,Rated) in our name,online_order etc columns
  remove this irrelevant text from all the columns
+
+**Task 6** : Unique value check and irrelevant value handling 
+
+online order column should have only yes and no because it is necessary to have the online order as yes or no only for zomato to perform further analysis, remove other values
+check for rating column and remove NEW,- values to 0 and remove /5 as rating column should only contain decimal values
+
+   
+    
+**Task 7** : claening and exporting dataset
+
+remove the unknown character from the dataset, we have Ã charachter in our names column
+    
+    
+**Task 8** : datacleaning andanalysis with excel and mysql
+
+Step1: Download the exported data set "zomatocleaned.csv"
+
+Step2: Eliminate any identical rows in the Excel dataset by performing the deduplication task.
+
+Step3: Upload the final dataset to the database provided to conduct an analysis in MySQL.
+
+Step4: Retrieve the database host, username, password, and database information from the "Database Info" tab and input it into db.py.
+
+Step5: To complete the current task, click on "Run Test" and confirm that your table has been successfully created.
+
 
 
    
