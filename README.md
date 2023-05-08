@@ -86,11 +86,16 @@ Only these columns are allowed in the dataset:
 
 ![image](https://user-images.githubusercontent.com/53274845/236850887-0688ef7c-b42e-421a-a8a9-83472ca4fb80.png)
 
+ ![image](https://user-images.githubusercontent.com/53274845/236851384-3781391a-fd43-40d2-9a38-7c38d4d2c730.png)
+
+
 **Task 4** : Identifying duplicate data in the dataset
 
  drop all the duplicate values keeping the first value as it is
  
- ![image](https://user-images.githubusercontent.com/53274845/236851384-3781391a-fd43-40d2-9a38-7c38d4d2c730.png)
+ ![image](https://user-images.githubusercontent.com/53274845/236851987-80fb7e56-5be7-4d2c-bdb9-3398fec1c54e.png)
+
+ 
 
 
 **Task 5** : Text cleaning 
