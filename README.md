@@ -67,23 +67,37 @@ Only these columns are allowed in the dataset:
 
 
  **Task 3** : Dealing with null values in dataset
+ 
+  delete null values of name column as name is the primary identifier of the dataset
+  replace null values of online order with NA
+  replace null values of book_table with NA
+  replace null values of rating to zero as it is a numerical datatype
+  replace null values of votes to zero as it is a numerical datatype
+  replace null values of location to NA
+  replace null values of rest_type to NA
+  replace null values of dishliked to NA
+  replace null values of cuisines to NA
+  replace null values of approxcost to 0 as it is a numerical value
+  replace null values of type to NA
 
-
-    delete null values of name column as name is the primary identifier of the dataset
-    replace null values of online order with NA
-    replace null values of book_table with NA
-    replace null values of rating to zero as it is a numerical datatype
-    replace null values of votes to zero as it is a numerical datatype
-    replace null values of location to NA
-    replace null values of rest_type to NA
-    replace null values of dishliked to NA
-    replace null values of cuisines to NA
-    replace null values of approxcost to 0 as it is a numerical value
-    replace null values of type to NA
+   
 
 ![image](https://user-images.githubusercontent.com/53274845/236850502-68b23b46-2119-4b1e-bb24-1a0b22581564.png)
 
-![image](https://user-images.githubusercontent.com/53274845/236850636-78882a4a-a363-4c26-8bb0-e78073551a48.png)
+![image](https://user-images.githubusercontent.com/53274845/236850887-0688ef7c-b42e-421a-a8a9-83472ca4fb80.png)
+
+**Task 4** : Identifying duplicate data in the dataset
+
+ drop all the duplicate values keeping the first value as it is
+ 
+ ![image](https://user-images.githubusercontent.com/53274845/236851384-3781391a-fd43-40d2-9a38-7c38d4d2c730.png)
 
 
+**Task 5** : Text cleaning 
+
+ we have irrelevant reviews like string eg(RATED,Rated) in our name,online_order etc columns
+ remove this irrelevant text from all the columns
+
+
+   
 
