@@ -36,6 +36,9 @@ importing the necessary libraries for the data processing
 
 ![image](https://user-images.githubusercontent.com/53274845/236831523-6e663c29-fd44-4d80-a92a-06d9b3906eca.png)
 
+
 **Task 1** : Removing unwnated columns
+
+
 ![image](https://user-images.githubusercontent.com/53274845/236833824-448a67b0-ed65-4e2b-bc84-3dfb488bf786.png)
 
