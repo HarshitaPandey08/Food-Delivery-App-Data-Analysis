@@ -40,12 +40,12 @@ importing the necessary libraries for the data processing
 ![image](https://user-images.githubusercontent.com/53274845/236831523-6e663c29-fd44-4d80-a92a-06d9b3906eca.png)
 
 
-**Task 1** : Removing unwnated columns
+**Task 1: Removing unwnated columns**
 
 
 ![image](https://user-images.githubusercontent.com/53274845/236833824-448a67b0-ed65-4e2b-bc84-3dfb488bf786.png)
 
-**Task 2** : Renaming and selecting columns in the dataset
+**Task 2: Renaming and selecting columns in the dataset**
 
 Only these columns are allowed in the dataset:
 1.    Id
@@ -65,7 +65,7 @@ Only these columns are allowed in the dataset:
 
 ![image](https://user-images.githubusercontent.com/53274845/236852431-2d0ac8da-301a-47ee-b537-93df1a5e41e1.png)
 
- **Task 3** : Dealing with null values in dataset
+ **Task 3: Dealing with null values in dataset**
  
   delete null values of name column as name is the primary identifier of the dataset
   replace null values of online order with NA
@@ -87,7 +87,7 @@ Only these columns are allowed in the dataset:
 
 ![image](https://user-images.githubusercontent.com/53274845/236852691-bf00a323-fd8a-4a5c-a264-e297a5f94676.png)
 
-**Task 4** : Identifying duplicate data in the dataset
+**Task 4: Identifying duplicate data in the dataset**
 
  drop all the duplicate values keeping the first value as it is
  
@@ -96,24 +96,24 @@ Only these columns are allowed in the dataset:
  
 
 
-**Task 5** : Text cleaning 
+**Task 5: Text cleaning**
 
  we have irrelevant reviews like string eg(RATED,Rated) in our name,online_order etc columns
  remove this irrelevant text from all the columns
 
-**Task 6** : Unique value check and irrelevant value handling 
+**Task 6: Unique value check and irrelevant value handling**
 
 online order column should have only yes and no because it is necessary to have the online order as yes or no only for zomato to perform further analysis, remove other values
 check for rating column and remove NEW,- values to 0 and remove /5 as rating column should only contain decimal values
 
    
     
-**Task 7** : claening and exporting dataset
+**Task 7: claening and exporting dataset**
 
 remove the unknown character from the dataset, we have Ã charachter in our names column
     
     
-**Task 8** : datacleaning andanalysis with excel and mysql
+**Task 8: datacleaning andanalysis with excel and mysql**
 
 Step1: Download the exported data set "zomatocleaned.csv"
 
