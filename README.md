@@ -45,3 +45,45 @@ importing the necessary libraries for the data processing
 
 ![image](https://user-images.githubusercontent.com/53274845/236833824-448a67b0-ed65-4e2b-bc84-3dfb488bf786.png)
 
+**Task 2** : Renaming and selecting columns in the dataset
+
+Only these columns are allowed in the dataset:
+1.    Id
+2.    Name
+3.    online_order
+4.    book_table
+5.    rating
+6.    votes
+7.    location
+8.    rest_type
+9.    dish_liked
+10.    cuisines
+11.    approx_cost
+12.    type
+
+![image](https://user-images.githubusercontent.com/53274845/236849858-e518f87b-9732-4db0-962c-248cb8ede6f5.png)
+
+![image](https://user-images.githubusercontent.com/53274845/236850233-1b664cb2-0b15-4c30-87c4-b92f2b7682ca.png)
+
+
+ **Task 3** : Dealing with null values in dataset
+
+
+    delete null values of name column as name is the primary identifier of the dataset
+    replace null values of online order with NA
+    replace null values of book_table with NA
+    replace null values of rating to zero as it is a numerical datatype
+    replace null values of votes to zero as it is a numerical datatype
+    replace null values of location to NA
+    replace null values of rest_type to NA
+    replace null values of dishliked to NA
+    replace null values of cuisines to NA
+    replace null values of approxcost to 0 as it is a numerical value
+    replace null values of type to NA
+
+![image](https://user-images.githubusercontent.com/53274845/236850502-68b23b46-2119-4b1e-bb24-1a0b22581564.png)
+
+![image](https://user-images.githubusercontent.com/53274845/236850636-78882a4a-a363-4c26-8bb0-e78073551a48.png)
+
+
+
