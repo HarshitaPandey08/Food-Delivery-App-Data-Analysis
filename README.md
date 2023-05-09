@@ -126,6 +126,96 @@ Step4: Retrieve the database host, username, password, and database information 
 Step5: To complete the current task, click on "Run Test" and confirm that your table has been successfully created.
 
 
+**Module 2 Data analysis using SQL**
+                                                        
+**Task 1: 
+For a high-level overview of the hotels, provide us the top 5 most voted hotels in the delivery category.**
+
+
+SELECT name,votes,rating from zomato
+where type='delivery'
+order by votes DESC 
+limit 5;
+
+
+**Task 2: 
+The rating of a hotel is a key identifier in determining a restaurant’s performance. Hence for a particular location called Banashankari find out the top 5 highly rated hotels in the delivery category.**
+
+SELECT name,rating,location,type from zomato
+where type='delivery' and  location ='Banashankari '
+order by rating DESC 
+limit 5;
+
+
+
+**Task 3: 
+Compare the ratings of the cheapest and most expensive hotels in Indiranagar.
+ 
+ SELECT t1.rating AS cheapest_rating, t2.rating AS expensive_rating
+FROM 
+    (SELECT rating, location
+    FROM zomato
+    WHERE location = 'Indiranagar'
+    ORDER BY approx_cost ASC
+    LIMIT 1) t1,
+    (SELECT rating, location
+    FROM zomato
+    WHERE location = 'Indiranagar'
+    ORDER BY approx_cost DESC
+    LIMIT 1) t2;
+
+
+
+    
+**Task 4: 
+Online ordering of food has exponentially increased over time. Compare the total votes of restaurants that provide online ordering services and those that don’t provide online ordering services.**
+
+SELECT 
+  SUM(CASE WHEN online_order = 'Yes' THEN votes END),'Yes' as online_order
+  FROM zomato
+  union all
+ select SUM(CASE WHEN online_order = 'No' THEN votes  END) ,'No' as online_order
+  FROM zomato
+
+
+**Task 5: 
+Number of votes defines how much the customers are involved with the service provided by the restaurants For each Restaurant type, find out the number of restaurants, total votes, and average rating. Display the data with the highest votes on the top( if the first row of output is NA display the remaining rows).**
+
+ select type,count(name),sum(votes),avg(rating)
+      FROM zomato
+	  where type!='NA'
+	group by type
+	
+	order by sum(votes) DESC
+
+
+**Task 6: 
+What is the most liked dish of the most-voted restaurant on Zomato(as the restaurant has a tie-up with Zomato, the restaurant compulsorily provides online ordering and delivery facilities.**
+
+select name,dish_liked,rating,votes
+   FROM zomato
+   where online_order='Yes'
+   order by votes DESC
+   limit 1
+
+**Task 7:
+To increase the maximum profit, Zomato is in need to expand its business. For doing so Zomato wants the list of the top 15 restaurants which have min 150 votes, have a rating greater than 3, and is currently not providing online ordering. Display the restaurants with the highest votes on the top.**
+
+ select name,rating,votes,'No' as online_order
+ FROM zomato
+ where votes>=150 and rating>3 and online_order='No'
+ order by votes DESC
+ limit 15
+    
+    
+    
+    
+  
+
+    
+    
+
+
 
    
 
