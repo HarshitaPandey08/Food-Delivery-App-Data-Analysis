@@ -49,7 +49,7 @@ importing the necessary libraries for the data processing
 
 Only these columns are allowed in the dataset:
 1.    Id
-2.    Name
+2.    name
 3.    online_order
 4.    book_table
 5.    rating
@@ -92,6 +92,9 @@ Only these columns are allowed in the dataset:
  drop all the duplicate values keeping the first value as it is
  
  ![image](https://user-images.githubusercontent.com/53274845/236851987-80fb7e56-5be7-4d2c-bdb9-3398fec1c54e.png)
+ 
+ ![image](https://user-images.githubusercontent.com/53274845/237009576-6d617cdd-d004-4af4-9ec3-196b36cb2f4b.png)
+
 
  
 
@@ -100,17 +103,31 @@ Only these columns are allowed in the dataset:
 
  we have irrelevant reviews like string eg(RATED,Rated) in our name,online_order etc columns
  remove this irrelevant text from all the columns
+ 
+![image](https://user-images.githubusercontent.com/53274845/237009687-5b5cb79c-e509-4ee4-a920-101b195d64e0.png)
+
+![image](https://user-images.githubusercontent.com/53274845/237009742-46eeb813-1e0c-4a3c-afa7-36941df174aa.png)
+
 
 **Task 6: Unique value check and irrelevant value handling**
 
 online order column should have only yes and no because it is necessary to have the online order as yes or no only for zomato to perform further analysis, remove other values
 check for rating column and remove NEW,- values to 0 and remove /5 as rating column should only contain decimal values
 
+![image](https://user-images.githubusercontent.com/53274845/237010053-b58fd5ce-bc91-47a9-9d5c-62f9273a6972.png)
+
+
+![image](https://user-images.githubusercontent.com/53274845/237009968-ade4c99f-b58a-46dc-9551-4bcdf2d15773.png)
+
+
    
     
 **Task 7: claening and exporting dataset**
 
 remove the unknown character from the dataset, we have Ã charachter in our names column
+
+![image](https://user-images.githubusercontent.com/53274845/237010326-8d4b30bc-7900-45f0-82a6-c5685ad00252.png)
+
     
     
 **Task 8: datacleaning andanalysis with excel and mysql**
@@ -126,7 +143,21 @@ Step4: Retrieve the database host, username, password, and database information 
 Step5: To complete the current task, click on "Run Test" and confirm that your table has been successfully created.
 
 
+#check if mysql table is created using "zomatocleaned.csv"
+#Use this final dataset and upload it on the provided database for performing analysis in  MySQL
+#To Run this task first Run the appliation for Terminal to create table named 'Zomato' and then run test.
+def start():
+    remove_the_unknown_character()
+
+def task_runner():
+    start()
+
 **Module 2 Data analysis using SQL**
+
+![image](https://user-images.githubusercontent.com/53274845/237012910-02e436a1-6b16-41d3-944c-29ad49cdaf0c.png)
+
+![image](https://user-images.githubusercontent.com/53274845/237011090-a710b266-5792-463a-be15-4ea99fa8e3a1.png)
+
                                                         
 **Task 1: 
 For a high-level overview of the hotels, provide us the top 5 most voted hotels in the delivery category.**
@@ -151,62 +182,28 @@ limit 5;
 **Task 3: 
 Compare the ratings of the cheapest and most expensive hotels in Indiranagar.
  
- SELECT t1.rating AS cheapest_rating, t2.rating AS expensive_rating
-FROM 
-    (SELECT rating, location
-    FROM zomato
-    WHERE location = 'Indiranagar'
-    ORDER BY approx_cost ASC
-    LIMIT 1) t1,
-    (SELECT rating, location
-    FROM zomato
-    WHERE location = 'Indiranagar'
-    ORDER BY approx_cost DESC
-    LIMIT 1) t2;
-
+![image](https://user-images.githubusercontent.com/53274845/237013059-645a0ed7-cf7f-4963-92c1-34231ce6e531.png)
 
 
     
 **Task 4: 
 Online ordering of food has exponentially increased over time. Compare the total votes of restaurants that provide online ordering services and those that don’t provide online ordering services.**
 
-SELECT 
-  SUM(CASE WHEN online_order = 'Yes' THEN votes END),'Yes' as online_order
-  FROM zomato
-  union all
- select SUM(CASE WHEN online_order = 'No' THEN votes  END) ,'No' as online_order
-  FROM zomato
-
+![image](https://user-images.githubusercontent.com/53274845/237013638-12968466-9e6b-47d5-bd20-22bbbceafabe.png)
 
 **Task 5: 
 Number of votes defines how much the customers are involved with the service provided by the restaurants For each Restaurant type, find out the number of restaurants, total votes, and average rating. Display the data with the highest votes on the top( if the first row of output is NA display the remaining rows).**
 
- select type,count(name),sum(votes),avg(rating)
-      FROM zomato
-	  where type!='NA'
-	group by type
-	
-	order by sum(votes) DESC
-
+![image](https://user-images.githubusercontent.com/53274845/237015425-f8cd68d3-78c0-4f03-ab59-5997bffac593.png)
 
 **Task 6: 
 What is the most liked dish of the most-voted restaurant on Zomato(as the restaurant has a tie-up with Zomato, the restaurant compulsorily provides online ordering and delivery facilities.**
-
-select name,dish_liked,rating,votes
-   FROM zomato
-   where online_order='Yes'
-   order by votes DESC
-   limit 1
+![image](https://user-images.githubusercontent.com/53274845/237015697-05bd6297-69be-4cb6-a833-01f6c7033a7a.png)
 
 **Task 7:
 To increase the maximum profit, Zomato is in need to expand its business. For doing so Zomato wants the list of the top 15 restaurants which have min 150 votes, have a rating greater than 3, and is currently not providing online ordering. Display the restaurants with the highest votes on the top.**
 
- select name,rating,votes,'No' as online_order
- FROM zomato
- where votes>=150 and rating>3 and online_order='No'
- order by votes DESC
- limit 15
-    
+![image](https://user-images.githubusercontent.com/53274845/237016050-dd9ea586-dc0b-4303-935d-9338590eaacb.png)
     
     
     
